@@ -154,7 +154,9 @@ class SpringSecurityAclGrailsPlugin {
 		objectIdentityRetrievalStrategy(GormObjectIdentityRetrievalStrategy)
 
 		// acl cache
-		aclCacheManager(EhCacheManagerFactoryBean)
+		aclCacheManager(EhCacheManagerFactoryBean) {
+            shared = true
+        }
 		ehcacheAclCache(EhCacheFactoryBean) {
 			cacheManager = ref('aclCacheManager')
 			cacheName = 'aclCache'
