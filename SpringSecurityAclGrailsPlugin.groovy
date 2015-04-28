@@ -155,7 +155,8 @@ class SpringSecurityAclGrailsPlugin {
 
 		// acl cache
 		aclCacheManager(EhCacheManagerFactoryBean) {
-            shared = true
+			cacheManagerName = 'springSecurityAclCacheManager'
+            //shared = true
         }
 		ehcacheAclCache(EhCacheFactoryBean) {
 			cacheManager = ref('aclCacheManager')
