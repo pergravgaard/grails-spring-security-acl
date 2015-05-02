@@ -202,7 +202,7 @@ class SpringSecurityAclGrailsPlugin {
 			permissionFactory = ref('aclPermissionFactory')
 		}
 
-		expressionParser(SpelExpressionParser)
+		aclExpressionParser(SpelExpressionParser)
 
 		aclPermissionCacheOptimizer(AclPermissionCacheOptimizer, ref('aclService')) {
 			objectIdentityRetrievalStrategy = ref('objectIdentityRetrievalStrategy')
@@ -212,7 +212,7 @@ class SpringSecurityAclGrailsPlugin {
 		expressionHandler(DefaultMethodSecurityExpressionHandler) {
 			parameterNameDiscoverer = ref('parameterNameDiscoverer')
 			permissionCacheOptimizer = ref('aclPermissionCacheOptimizer')
-			expressionParser = ref('expressionParser')
+			expressionParser = ref('aclExpressionParser')
 			roleHierarchy = ref('roleHierarchy')
 			permissionEvaluator = ref('permissionEvaluator')
 		}
